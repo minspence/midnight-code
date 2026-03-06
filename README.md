@@ -1,1 +1,1 @@
-This is [MidnightCodes](https://midnight-code.tech) website built using Nextjs, Sanity, and Supabase.
+This is [MidnightCodes]([https://minspence.github.io/midnight-code/]) website built using Nextjs, Sanity, and Supabase.
