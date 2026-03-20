@@ -1,121 +1,78 @@
 import Image from "next/image";
-import Link from "next/link";
-
 import ContactForm from "./components/contactForm";
-import CardContainer from "./components/card/card";
+import { Button } from"./components/button";
 
 export default function Home() {
   return (
     <div>
       <main>
+        {/* hero section */}
         <section
           id="hero"
-          className="bg-[url(/hero-background.jpeg)] h-100 mt-4"
-        >
-          <div className="container mx-auto sm:px-6 lg:px-8">
+          className="container mx-auto max-w-3xl sm:mb-7 lg:max-w-7xl px-5 py-12 grid gap-5 lg:grid-cols-2 items-center">
+            <div className="md:col-span-2">
+              <h1 className="font-inter font-bold mb-2 sm:mb-2.5 md:text-9xl sm:text-7xl text-5xl tracking-tight leading-[97.52%] max-w-200 max-h-62 ">Midnight Code</h1>
+              <p className="font-mono">&#34;The best ideas come after midnight.&#34;</p>
+            </div>
+            <div className="flex gap-5">
+              <Button href='/contact' color="cyan">Let&#39;s Chat</Button>
+              <Button href='/projects' color="cyan">View Work</Button>
+            </div>
+        </section>
+
+        {/* featured section */}
+        <section id="featured" className="container mx-auto max-w-3xl lg:max-w-7xl px-5 py-12">
+
+          <h2 className="text-3xl font-bold mb-7">Featured Projects</h2>
+          <div className="grid gap-9 grid-cols-[repeat(auto-fit,minmax(250px,1fr))]">
             <div>
-              <h1 className="text-4xl text-[#2CDDE8] font-bold">
-                Midnight Code
-              </h1>
-              <p className="text-sm">The best ideas come after midnight.</p>
-            </div>
-          </div>
-        </section>
-        <section id="featured">
-          <div className="container mx-auto">
-            <div className="flex flex-col">
-              <div className="mb-2.5">
-                <h2 className="text-3xl font-semibold">Featured Projects</h2>
-              </div>
-              <div className="mb-5">
-                <ul className="grid grid-cols-3">
-                  <li>
-                    <CardContainer />
-                  </li>
-                  <li>
-                    <div>
-                      <div>image here</div>
-                      <div>
-                        <h3>Creative Counseling</h3>
-                        <p>Nextjs website</p>
-                        <Link href="#">
-                          <button className="bg-[#FB3998] rounded h-9 w-38">
-                            Visit site
-                          </button>
-                        </Link>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div>
-                      <div>image here</div>
-                      <div>
-                        <h3>Late night Code</h3>
-                        <p>Nextjs Sanity Blog website</p>
-                        <Link href="#">
-                          <button className="bg-[#FB3998] rounded h-9 w-38">
-                            Visit site
-                          </button>
-                        </Link>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <Link href="#">
-                <button className="bg-[#FB3998] rounded h-9 w-38">
-                  View All Projects
-                </button>
-              </Link>
-            </div>
-          </div>
-        </section>
-        <section id="tools" className="my-8 bg-black h-100 ">
-          <div className="container grid grid-col bg-red-200 mx-auto h-full">
-            <div className="bg-orange-200 max-w-3xs my-4 ">
-              <h2 className="text-3xl font-bold">What I build with</h2>
-              <p className="text-sm">If you care about that sorta thing.</p>
-            </div>
-            <ul className="bg-orange-300 grid grid-cols-3 grid-rows-2 p-3 gap-8">
-              <li>Nextjs</li>
-              <li>Tailwind</li>
-              <li>Typescript</li>
-              <li>Sanity</li>
-              <li>Supabase</li>
-              <li>Webflow</li>
-            </ul>
-          </div>
-        </section>
-        <section id="contact">
-          <div className="container mx-auto grid grid-cols-2">
-            <div className="flex flex-col">
-              <div>
-                <h2>Let build something!</h2>
-                <p>
-                  Whatever you want to build, website, web application, App. Im
-                  here to help drop me a line and lets talk.
-                </p>
-                <div>
-                  <ContactForm />
-                </div>
-              </div>
+              <Image src="/Hayes-valley.jpg" alt="Hayes Valley Interior Design" width={500} height={300} className="rounded-xl object-cover mb-3"/>
+              <h3 className="text-lg font-bold mb-2.5">Project Name</h3>
+              <p className="font-mono mb-6">Lorem, ipsum dolor sit amet consectetur adipisicng elit. Labore, praesentium. </p>
+              <Button href="" color="cyan">View project</Button>
             </div>
             <div>
-              <div>
-                <ul>
-                  <li>
-                    Address: 500 W 5th Street, Suite 800, Winston-Salem, NC,
-                    27101
-                  </li>
-                  <li>
-                    <p>Phone/WhatsApp: 336-692-6157</p>
-                  </li>
-                  <li>
-                    <p>Email: contact@midnight-code.tech</p>
-                  </li>
-                </ul>
-              </div>
+              <Image src="/Hayes-valley.jpg" alt="Hayes Valley Interior Design" width={500} height={300} className="rounded-xl object-cover mb-3"/>
+              <h3 className="text-lg font-bold mb-2.5">Project Name</h3>
+              <p className="font-mono mb-6">Lorem, ipsum dolor sit amet consectetur adipisicng elit. Labore, praesentium. </p>
+              <Button href="" color="cyan">View project</Button>
             </div>
+            <div>
+              <Image src="/Hayes-valley.jpg" alt="Hayes Valley Interior Design" width={500} height={300} className="rounded-xl object-cover mb-3"/>
+              <h3 className="text-lg font-bold mb-2.5">Project Name</h3>
+              <p className="font-mono mb-6">Lorem, ipsum dolor sit amet consectetur adipisicng elit. Labore, praesentium. </p>
+              <Button href="" color="cyan">View project</Button>
+            </div>
+          </div>
+        </section>
+
+        {/* tools section */}
+        <section id="tools" className="container mx-auto max-w-3xl lg:max-w-7xl px-5 py-12">
+          <div className="mb-7">
+            <h2 className="text-3xl font-bold mb-2.5">Tools I use</h2>
+            <p className="font-mono">&#34;If you care about that sorta thing.&#34;</p>
+          </div>
+          <div className="grid gap-5 grid-cols-[repeat(auto-fit,minmax(90px,1fr))] items-center">
+            <Image src="/logos/Next.js.svg" alt="Next.js logo" width={100} height={100}/>
+            <Image src="/logos/ts-logo.png" alt="TypeScript logo" width={100} height={100}/>
+            <Image src="/logos/Tailwind.png" alt="Tailwind CSS logo" width={100} height={100}/>
+            <Image src="/logos/Supabase.png" alt="Supabase logo" width={100} height={100}/>
+            <Image src="/logos/Sanity.png" alt="Sanity logo" width={100} height={100}/>
+            <Image src="/logos/Webflow.jpeg" alt="Webflow logo" width={100} height={100}/>
+          </div>
+
+        </section>
+        {/* contact section */}
+        <section id="contact" className="container mx-auto max-w-3xl lg:max-w-7xl px-5 py-12 grid gird-cols-1 md:grid-cols-2 gap-5 items-center">
+          <div>
+            <ContactForm />
+          </div>
+          <div>
+            <h2 className="font-bold text-4xl mb-2.5">Let build something!</h2>
+            <p className="font-mono font-sm max-w-100 ">
+              &#34;Whatever you want to build, website, web application, or have an App. idea Im
+              here to help drop me a line and lets talk.&#34;
+            </p>
           </div>
         </section>
       </main>

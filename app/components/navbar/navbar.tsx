@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
-  { name: "Home", href: "/", current: true },
+  { name: "Home", href: "/", current: false },
   { name: "Blog", href: "/late-night-code", current: false },
   { name: "About", href: "/minuit-spence", current: false },
   { name: "Contact", href: "/contact", current: false },
@@ -16,16 +16,16 @@ const classNames = (
 
 export default function Navbar() {
   return (
-    <div>
-      <nav className="container mx-auto flex justify-between">
-        <Link href="/">
-          <Image
+    <div className="container mx-auto flex justify-between h-16 items-center">
+      <div>
+        <Image
             src="/logo.png"
             alt="Midnight Code logo"
-            height={60}
+            height={128}
             width={128}
-          />
-        </Link>
+        />
+      </div>
+      <nav>
         <div>
           {navLinks.map((item) => (
             <Link

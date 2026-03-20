@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Button } from "./button";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -51,17 +52,17 @@ export default function ContactForm() {
   };
 
   return (
-    <div>
+    <div className="container mx-auto max-w-3xl lg:max-w-5xl px-5 py-12">
+
       <form
         onSubmit={handleSubmit}
-        className="px-6 pt-20 pb-24 sm:pb-32 lg:px-8 lg:py-48"
       >
         <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
           <div className="flex flex-col gap-x-8 gap-y-6">
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm/6 font-semibold text-white"
+                className="block text-sm/6 font-semibold uppercase text-white"
               >
                 Name
               </label>
@@ -73,14 +74,14 @@ export default function ContactForm() {
                   value={formData.name}
                   onChange={handleChange}
                   autoComplete="given-name"
-                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-purple-600 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-purple-500"
+                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-200 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-blue-200"
                 />
               </div>
             </div>
             <div className="sm:col-span-2">
               <label
                 htmlFor="email"
-                className="block text-sm/6 font-semibold text-gray-900 dark:text-white"
+                className="block text-sm/6 font-semibold uppercase text-white"
               >
                 Email
               </label>
@@ -92,7 +93,7 @@ export default function ContactForm() {
                   value={formData.email}
                   onChange={handleChange}
                   autoComplete="email"
-                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-purple-600 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-purple-500"
+                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-200 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-blue-200"
                 />
               </div>
             </div>
@@ -100,7 +101,7 @@ export default function ContactForm() {
             <div className="sm:col-span-2">
               <label
                 htmlFor="message"
-                className="block text-sm/6 font-semibold text-gray-900 dark:text-white"
+                className="block text-sm/6 font-semibold uppercase text-white"
               >
                 Message
               </label>
@@ -111,21 +112,21 @@ export default function ContactForm() {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-purple-600 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-purple-500"
+                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-200 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-blue-200"
                 />
               </div>
             </div>
           </div>
           <div className="mt-8 flex justify-end">
-            <button
+            <Button
               type="submit"
-              className="rounded-md bg-[#FB3998] px-3.5 py-2.5 text-center text-sm font-semibold text-[#1A2A57] shadow-xs "
+              color="cyan"
             >
               Send message
-            </button>
+            </Button>
           </div>
         </div>
       </form>
-    </div>
+      </div>
   );
 }
