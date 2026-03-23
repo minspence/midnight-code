@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { Button } from "../components/button";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -124,12 +123,12 @@ export default function Contact() {
               </div>
             </div>
             <div className="mt-8 flex justify-end">
-              <Button
+              <button
                   type="submit"
-                  color="cyan"
+                  className="bg-blue-200 hover:bg-blue-400 text-black font-bold py-2 px-4 rounded-md"
               >
                 Send message
-              </Button>
+              </button>
             </div>
           </div>
         </form>

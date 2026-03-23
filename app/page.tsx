@@ -1,6 +1,6 @@
 import Image from "next/image";
 import ContactForm from "./components/contactForm";
-import { Button } from"./components/button";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -15,8 +15,12 @@ export default function Home() {
               <p className="font-mono">&#34;The best ideas come after midnight.&#34;</p>
             </div>
             <div className="flex gap-5">
-              <Button href='/contact' color="cyan">Let&#39;s Chat</Button>
-              <Button href='/projects' color="cyan">View Work</Button>
+              <Link href='/contact'>
+              <button>Let&#39;s Chat</button>
+              </Link>
+              <Link href='/projects'>
+              <button>View Work</button>
+              </Link>
             </div>
         </section>
 
@@ -30,19 +34,25 @@ export default function Home() {
               <Image src="/Hayes-valley.jpg" alt="Hayes Valley Interior Design" width={500} height={300} className="rounded-xl object-cover mb-3"/>
               <h3 className="text-lg font-bold mb-2.5">Project Name</h3>
               <p className="font-mono mb-6">Lorem, ipsum dolor sit amet consectetur adipisicng elit. Labore, praesentium. </p>
-              <Button href="" color="cyan">View project</Button>
+              <Link href="/project/hayes-valley-interior-design">
+              <button className="bg-blue-200">View project</button>
+              </Link>
             </div>
             <div>
               <Image src="/Hayes-valley.jpg" alt="Hayes Valley Interior Design" width={500} height={300} className="rounded-xl object-cover mb-3"/>
               <h3 className="text-lg font-bold mb-2.5">Project Name</h3>
               <p className="font-mono mb-6">Lorem, ipsum dolor sit amet consectetur adipisicng elit. Labore, praesentium. </p>
-              <Button href="" color="cyan">View project</Button>
+              <Link href="/project/hayes-valley-interior-design">
+              <button className="bg-blue-200">View project</button>
+              </Link>
             </div>
             <div>
               <Image src="/Hayes-valley.jpg" alt="Hayes Valley Interior Design" width={500} height={300} className="rounded-xl object-cover mb-3"/>
               <h3 className="text-lg font-bold mb-2.5">Project Name</h3>
               <p className="font-mono mb-6">Lorem, ipsum dolor sit amet consectetur adipisicng elit. Labore, praesentium. </p>
-              <Button href="" color="cyan">View project</Button>
+              <Link href="/project/hayes-valley-interior-design">
+              <button className="bg-blue-200 text-black font-bold py-2.5 px-4 rounded-md">View project</button>
+              </Link>
             </div>
           </div>
         </section>
