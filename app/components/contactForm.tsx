@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { Button } from "./button";
+import React, { useState } from "react";
+import { Button } from "../components/button";
 
-export default function ContactForm() {
+export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,7 +12,7 @@ export default function ContactForm() {
   const [status, setStatus] = useState("");
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+      e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -21,7 +21,7 @@ export default function ContactForm() {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("Sending...");
     try {
@@ -52,81 +52,87 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="container mx-auto max-w-3xl lg:max-w-5xl px-5 py-12">
+      <div className="container mx-auto max-w-3xl lg:max-w-5xl px-5 py-12">
 
-      <form
-        onSubmit={handleSubmit}
-      >
-        <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
-          <div className="flex flex-col gap-x-8 gap-y-6">
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-sm/6 font-semibold uppercase text-white"
-              >
-                Name
-              </label>
-              <div className="mt-2.5">
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  value={formData.name}
-                  onChange={handleChange}
-                  autoComplete="given-name"
-                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-200 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-blue-200"
-                />
+        <form
+            onSubmit={handleSubmit}
+        >
+          <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
+            <div className="flex flex-col gap-x-8 gap-y-6">
+              <div>
+                <label
+                    htmlFor="name"
+                    className="block text-sm/6 font-semibold uppercase text-white"
+                >
+                  Name
+                </label>
+                <div className="mt-2.5">
+                  <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      maxLength={20}
+                      value={formData.name}
+                      onChange={handleChange}
+                      autoComplete="given-name"
+                      required={true}
+                      className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-200 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-blue-200"
+                  />
+                </div>
               </div>
-            </div>
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="email"
-                className="block text-sm/6 font-semibold uppercase text-white"
-              >
-                Email
-              </label>
-              <div className="mt-2.5">
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  autoComplete="email"
-                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-200 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-blue-200"
-                />
+              <div className="sm:col-span-2">
+                <label
+                    htmlFor="email"
+                    className="block text-sm/6 font-semibold uppercase text-white"
+                >
+                  Email
+                </label>
+                <div className="mt-2.5">
+                  <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      maxLength={50}
+                      value={formData.email}
+                      onChange={handleChange}
+                      autoComplete="email"
+                      required={true}
+                      className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-200 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-blue-200"
+                  />
+                </div>
               </div>
-            </div>
 
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="message"
-                className="block text-sm/6 font-semibold uppercase text-white"
-              >
-                Message
-              </label>
-              <div className="mt-2.5">
+              <div className="sm:col-span-2">
+                <label
+                    htmlFor="message"
+                    className="block text-sm/6 font-semibold uppercase text-white"
+                >
+                  Message
+                </label>
+                <div className="mt-2.5">
                 <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-200 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-blue-200"
+                    id="message"
+                    name="message"
+                    maxLength={500}
+                    rows={4}
+                    value={formData.message}
+                    onChange={handleChange}
+                    required={true}
+                    className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-200 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-blue-200"
                 />
+                </div>
               </div>
             </div>
+            <div className="mt-8 flex justify-end">
+              <Button
+                  type="submit"
+                  color="cyan"
+              >
+                Send message
+              </Button>
+            </div>
           </div>
-          <div className="mt-8 flex justify-end">
-            <Button
-              type="submit"
-              color="cyan"
-            >
-              Send message
-            </Button>
-          </div>
-        </div>
-      </form>
+        </form>
       </div>
   );
 }

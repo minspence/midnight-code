@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button } from "../components/button";
 
 export default function Contact() {
@@ -21,7 +21,7 @@ export default function Contact() {
         }));
     };
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
         e.preventDefault();
         setStatus("Sending...");
         try {
@@ -71,9 +71,11 @@ export default function Contact() {
                                     id="name"
                                     name="name"
                                     type="text"
+                                    maxLength={20}
                                     value={formData.name}
                                     onChange={handleChange}
                                     autoComplete="given-name"
+                                    required={true}
                                     className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-200 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-blue-200"
                                 />
                             </div>
@@ -90,9 +92,11 @@ export default function Contact() {
                                     id="email"
                                     name="email"
                                     type="email"
+                                    maxLength={50}
                                     value={formData.email}
                                     onChange={handleChange}
                                     autoComplete="email"
+                                    required={true}
                                     className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-200 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-blue-200"
                                 />
                             </div>
@@ -109,9 +113,11 @@ export default function Contact() {
                 <textarea
                     id="message"
                     name="message"
+                    maxLength={500}
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
+                    required={true}
                     className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-200 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-blue-200"
                 />
                             </div>

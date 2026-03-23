@@ -23,8 +23,9 @@ export default function Home() {
         {/* featured section */}
         <section id="featured" className="container mx-auto max-w-3xl lg:max-w-7xl px-5 py-12">
 
-          <h2 className="text-3xl font-bold mb-7">Featured Projects</h2>
-          <div className="grid gap-9 grid-cols-[repeat(auto-fit,minmax(250px,1fr))]">
+
+          <div className="grid gap-9 grid-cols-[repeat(auto-fit,minmax(15.62rem,1fr))]">
+            <h2 className="text-3xl font-bold text-center col-span-full mb-7">Featured Projects</h2>
             <div>
               <Image src="/Hayes-valley.jpg" alt="Hayes Valley Interior Design" width={500} height={300} className="rounded-xl object-cover mb-3"/>
               <h3 className="text-lg font-bold mb-2.5">Project Name</h3>
