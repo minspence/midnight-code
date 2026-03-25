@@ -35,7 +35,7 @@ export default function Home() {
               <h3 className="text-lg font-bold mb-2.5">Project Name</h3>
               <p className="font-mono mb-6">Lorem, ipsum dolor sit amet consectetur adipisicng elit. Labore, praesentium. </p>
               <Link href="/project/hayes-valley-interior-design">
-              <button className="bg-blue-200">View project</button>
+              <button className="bg-blue-200 text-black font-bold py-2 px-4 rounded-md">View project</button>
               </Link>
             </div>
             <div>
@@ -43,7 +43,7 @@ export default function Home() {
               <h3 className="text-lg font-bold mb-2.5">Project Name</h3>
               <p className="font-mono mb-6">Lorem, ipsum dolor sit amet consectetur adipisicng elit. Labore, praesentium. </p>
               <Link href="/project/hayes-valley-interior-design">
-              <button className="bg-blue-200">View project</button>
+              <button className="bg-blue-200 text-black font-bold py-2 px-4 rounded-md">View project</button>
               </Link>
             </div>
             <div>
@@ -51,7 +51,7 @@ export default function Home() {
               <h3 className="text-lg font-bold mb-2.5">Project Name</h3>
               <p className="font-mono mb-6">Lorem, ipsum dolor sit amet consectetur adipisicng elit. Labore, praesentium. </p>
               <Link href="/project/hayes-valley-interior-design">
-              <button className="bg-blue-200 text-black font-bold py-2.5 px-4 rounded-md">View project</button>
+              <button className="bg-blue-200 text-black font-bold py-2 px-4 rounded-md">View project</button>
               </Link>
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function Home() {
 
         </section>
         {/* contact section */}
-        <section id="contact" className="container mx-auto max-w-3xl lg:max-w-7xl px-5 py-12 grid gird-cols-1 md:grid-cols-2 gap-5 items-center">
+        <section id="contact" className="container mx-auto max-w-3xl lg:max-w-7xl px-5 py-12 grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
           <div>
             <ContactForm />
           </div>

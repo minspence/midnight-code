@@ -14,7 +14,7 @@ export default function Footer() {
           />
           <div className="flex flex-col gap-y-2.5 text-end">
             <Link href="/">Home</Link>
-            <Link href="/late-night-code">Blog</Link>
+            <Link href="https://late-night-code.midnight-code.tech/">Blog</Link>
             <Link href="/projects">Projects</Link>
             <Link href="/contact">Contact</Link>
           </div>
