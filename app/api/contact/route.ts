@@ -25,7 +25,7 @@ export async function POST(request: Request) {
         request.headers.get("x-real-ip") ||
         "unknown";
 
-    if (!rateLimit(5, 60_000, ip)) {
+    if (!rateLimit(5, 60_000, ip).allowed) {
       return NextResponse.json(
           { error: "Too many requests, please try again later." },
           { status: 429 },
