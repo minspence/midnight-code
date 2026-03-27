@@ -1,20 +1,23 @@
-import Image from "next/image";
-import Link from "next/link";
+import { sanityFetch } from '@/sanity/lib/live'
+import { ALL_PROJECTS_QUERY } from '@/sanity/queries/projects'
+import ProjectCard, { type ProjectCardData } from '../components/ProjectCard'
 
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+  const { data: projects } = await sanityFetch({ query: ALL_PROJECTS_QUERY })
+
   return (
-    <div>
-        <div>
-            <h1>My projects</h1>
-            <p>Here are some of my projects</p>
-            <div>
-                <Link href="/project/hayes-valley-interior-design">
-                <Image src="/Hayes-valley.jpg" alt="Hayes Valley Interior Design" width={500} height={300} className="rounded-xl object-cover mb-3"/>
-                <h2 className="mb-2">Hayes Valley Interior Design</h2>
-                </Link>
-                <p>Description</p>
-            </div>
+    <div className="container mx-auto max-w-3xl lg:max-w-7xl px-5 py-12">
+      <h1 className="text-4xl font-bold mb-2.5">My Projects</h1>
+      <p className="font-mono mb-12">Here are some of my projects</p>
+      {projects.length === 0 ? (
+        <p className="font-mono">No projects yet — check back soon.</p>
+      ) : (
+        <div className="grid gap-9 grid-cols-[repeat(auto-fit,minmax(15.62rem,1fr))]">
+          {(projects as ProjectCardData[]).map((project) => (
+            <ProjectCard key={project._id} project={project} />
+          ))}
         </div>
+      )}
     </div>
-  );
+  )
 }

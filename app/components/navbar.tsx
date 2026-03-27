@@ -1,11 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { name: "Home", href: "/", current: false },
-  { name: "Blog", href: "https://late-night-code.midnight-code.tech/", current: false },
-  { name: "About", href: "/minuit-spence", current: false },
-  { name: "Contact", href: "/contact", current: false },
+  { name: "Home", href: "/" },
+  { name: "Projects", href: "/projects" },
+  { name: "Blog", href: "https://late-night-code.midnight-code.tech/" },
+  { name: "About", href: "/minuit-spence" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const classNames = (
@@ -15,33 +19,38 @@ const classNames = (
 };
 
 export default function Navbar() {
+  const pathname = usePathname();
+
   return (
     <div className="container mx-auto flex justify-between h-16 items-center">
       <div>
         <Image
-            src="/logo.png"
-            alt="Midnight Code logo"
-            height={128}
-            width={128}
+          src="/logo.png"
+          alt="Midnight Code logo"
+          height={128}
+          width={128}
         />
       </div>
       <nav>
         <div>
-          {navLinks.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              aria-current={item.current ? "page" : undefined}
-              className={classNames(
-                item.current
-                  ? "bg-gray-900 text-white"
-                  : "text-gray-300 hover:bg-white/5 hover:text-white",
-                "rounded-md px-3 py-2 text-sm font-medium",
-              )}
-            >
-              {item.name}
-            </Link>
-          ))}
+          {navLinks.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                aria-current={isActive ? "page" : undefined}
+                className={classNames(
+                  isActive
+                    ? " text-white"
+                    : "text-gray-300 hover:bg-white/5 hover:text-white",
+                  "rounded-md px-3 py-2 text-sm font-medium",
+                )}
+              >
+                {item.name}
+              </Link>
+            );
+          })}
         </div>
       </nav>
     </div>
