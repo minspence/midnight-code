@@ -1,8 +1,13 @@
 import Image from "next/image";
 import ContactForm from "./components/contactForm";
 import Link from "next/link";
+import { sanityFetch } from "@/sanity/lib/live";
+import { FEATURED_PROJECTS_QUERY } from "@/sanity/queries/projects";
+import ProjectCard, { ProjectCardData } from "./components/ProjectCard";
 
-export default function Home() {
+export default async function Home() {
+  const { data: featuredProjects } = await sanityFetch({ query: FEATURED_PROJECTS_QUERY })
+
   return (
     <div>
       <main>
@@ -26,35 +31,16 @@ export default function Home() {
 
         {/* featured section */}
         <section id="featured" className="container mx-auto max-w-3xl lg:max-w-7xl px-5 py-12">
-
-
-          <div className="grid gap-9 grid-cols-[repeat(auto-fit,minmax(15.62rem,1fr))]">
-            <h2 className="text-3xl font-bold text-center col-span-full mb-7">Featured Projects</h2>
-            <div>
-              <Image src="/Hayes-valley.jpg" alt="Hayes Valley Interior Design" width={500} height={300} className="rounded-xl object-cover mb-3"/>
-              <h3 className="text-lg font-bold mb-2.5">Project Name</h3>
-              <p className="font-mono mb-6">Lorem, ipsum dolor sit amet consectetur adipisicng elit. Labore, praesentium. </p>
-              <Link href="/project/hayes-valley-interior-design">
-              <button className="bg-blue-200 text-black font-bold py-2 px-4 rounded-md">View project</button>
-              </Link>
+          <h2 className="text-3xl font-bold text-center col-span-full mb-7">Featured Projects</h2>
+          {featuredProjects.length > 0 ? (
+            <div className="grid gap-9 grid-cols-[repeat(auto-fit,minmax(15.62rem,1fr))]">
+              {featuredProjects.map((project: ProjectCardData) => (
+                <ProjectCard key={project._id} project={project} />
+              ))}
             </div>
-            <div>
-              <Image src="/Hayes-valley.jpg" alt="Hayes Valley Interior Design" width={500} height={300} className="rounded-xl object-cover mb-3"/>
-              <h3 className="text-lg font-bold mb-2.5">Project Name</h3>
-              <p className="font-mono mb-6">Lorem, ipsum dolor sit amet consectetur adipisicng elit. Labore, praesentium. </p>
-              <Link href="/project/hayes-valley-interior-design">
-              <button className="bg-blue-200 text-black font-bold py-2 px-4 rounded-md">View project</button>
-              </Link>
-            </div>
-            <div>
-              <Image src="/Hayes-valley.jpg" alt="Hayes Valley Interior Design" width={500} height={300} className="rounded-xl object-cover mb-3"/>
-              <h3 className="text-lg font-bold mb-2.5">Project Name</h3>
-              <p className="font-mono mb-6">Lorem, ipsum dolor sit amet consectetur adipisicng elit. Labore, praesentium. </p>
-              <Link href="/project/hayes-valley-interior-design">
-              <button className="bg-blue-200 text-black font-bold py-2 px-4 rounded-md">View project</button>
-              </Link>
-            </div>
-          </div>
+          ) : (
+            <p className="font-mono text-center">No featured projects yet.</p>
+          )}
         </section>
 
         {/* tools section */}

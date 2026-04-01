@@ -14,7 +14,7 @@ export const ALL_PROJECTS_QUERY = defineQuery(`
 `)
 
 export const FEATURED_PROJECTS_QUERY = defineQuery(`
-  *[_type == "project" && featured == true] | order(order asc, _createdAt desc) {
+  *[_type == "project" && featured == true] | order(order asc, _createdAt desc) [0..3] {
     _id,
     title,
     slug,
