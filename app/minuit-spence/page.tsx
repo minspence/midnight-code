@@ -1,10 +1,11 @@
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/20/solid";
+import Image from "next/image";
 
 const profile = {
   name: "Minuit Spence",
   email: "minspence@midnight-code.tech",
   avatar: "/minuitspence.jpg",
-  backgroundImage: "rebecca_CP.png",
+  backgroundImage: "/rebecca_CP.png",
   fields: [
     ["Phone", "(336) 692-6157 "],
     ["Email", "minspence@midnight-code.tech"],
@@ -17,17 +18,24 @@ const profile = {
 export default function MinuitSpencePortfolio() {
   return (
     <div>
-      <img
-        alt=""
-        src={profile.backgroundImage}
-        className="h-32 w-full object-cover lg:h-48"
-      />
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div className="relative h-32 w-full lg:h-48">
+        <Image
+          alt=""
+          src={profile.backgroundImage}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+      </div>
+      <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
           <div className="flex">
-            <img
+            <Image
               alt=""
               src={profile.avatar}
+              height={100}
+              width={100}
               className="size-24 rounded-full ring-4 ring-white sm:size-32 dark:ring-gray-900 dark:outline dark:-outline-offset-1 dark:outline-white/10"
             />
           </div>
@@ -66,6 +74,11 @@ export default function MinuitSpencePortfolio() {
           <h1 className="truncate text-2xl font-bold text-gray-900 dark:text-white">
             {profile.name}
           </h1>
+        </div>
+        <div className="mt-6">
+          <p className="text-gray-300 max-w-125 mx-auto">
+            Fullstack freelance website developer based in Winston-Salem, North Carolina. I like to build responsive websites and web applications. I&apos;m always looking for new challenges and opportunities to grow as a developer.
+          </p>
         </div>
       </div>
     </div>
