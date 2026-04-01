@@ -128,10 +128,10 @@ export default async function Home() {
           id="contact"
           className="container mx-auto max-w-3xl lg:max-w-7xl px-5 py-16 md:py-20 lg:py-28 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center"
         >
-          <div>
+          <div className="order-2 md:order-1">
             <ContactForm />
           </div>
-          <div className="text-center md:text-left">
+          <div className="order-1 md:order-2 text-center md:text-left">
             <h2 className="font-bold text-4xl mb-2.5">Let build something!</h2>
             <p className="font-mono font-sm max-w-100 mx-auto md:mx-0">
               &#34;Whatever you want to build, website, web application, or have

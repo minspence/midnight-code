@@ -20,5 +20,7 @@
 
 body {
   background: radial-gradient(ellipse at top, #26316d 0%, #000 60%);
+  background-attachment: fixed;
+  min-height: 100dvh;
   color: #fff;
 }
