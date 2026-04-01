@@ -1,32 +1,54 @@
-import Image from "next/image";
 import Link from "next/link";
+
+const navLinks = {
+  main: [
+    { name: "Home", href: "/" },
+    { name: "Projects", href: "/projects" },
+    { name: "Blog", href: "https://late-night-code.midnight-code.tech" }, //Update to correct URL at build time
+    { name: "About", href: "/minuit-spence" },
+    { name: "Contact", href: "/contact" },
+  ],
+  social: [
+    { name: "GitHub", href: "https://github.com/minspence" },
+    { name: "LinkedIn", href: "https://linkedin.com/in/minuitspence" },
+  ],
+};
 
 export default function Footer() {
   return (
     <div>
-      <div className="container mx-auto sm:px-6 lg:px-8 grid grid-cols-2 gap-8">
-        <div className="flex flex-col justify-end">
-          <Image
-            src="/logo.png"
-            alt="Midnight code logo"
-            height={68}
-            width={260}
-          />
-          <div className="flex flex-col gap-y-2.5 text-end">
-            <Link href="/">Home</Link>
-            <Link href="https://late-night-code.midnight-code.tech/">Blog</Link>
-            <Link href="/projects">Projects</Link>
-            <Link href="/contact">Contact</Link>
-          </div>
+      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+        <div>
+          <nav
+            aria-label="Footer"
+            className="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6"
+          >
+            {navLinks.main.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
         </div>
-        <div className="flex flex-col gap-2.5 text-start justify-center uppercase">
-          <p>
-            Address: 500 W 5th Street,
-            <br /> Suite 800, Winston-Salem, NC
-          </p>
-          <p>Phone/WhatsApp: +1 (336) 692-6157</p>
-          <p>Email: contact@midnight-code.tech</p>
+        <div className="mt-16 flex justify-center gap-x-10">
+          {navLinks.social.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
+            >
+              <span className="sr-only">{item.name}</span>
+              {item.name}
+            </Link>
+          ))}
         </div>
+        <p className="mt-10 text-center text-sm/6 text-gray-600 dark:text-gray-400">
+          &copy; 2025 Midnight Code LLC. All rights reserved.
+        </p>
       </div>
     </div>
   );

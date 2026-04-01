@@ -51,7 +51,7 @@ export default function Contact() {
   };
 
   return (
-      <div className="container mx-auto max-w-3xl lg:max-w-5xl px-5 py-12">
+      <div>
 
         <form
             onSubmit={handleSubmit}
