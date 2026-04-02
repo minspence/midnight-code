@@ -33,7 +33,7 @@ export default async function Home() {
               Next.js, Sanity, Supabase, and Webflow. Take a look at our work
               and let&#39;s build your next project!
             </p>
-            <div className="flex gap-5 justify-center md:justify-end md:flex-shrink-0">
+            <div className="flex gap-5 justify-center md:justify-end md:shrink-0">
               <Link href="/contact">
                 <button
                   type="button"
