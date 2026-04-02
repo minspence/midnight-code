@@ -23,7 +23,6 @@ export default function MinuitSpencePortfolio() {
           alt=""
           src={profile.backgroundImage}
           fill
-          priority
           sizes="100vw"
           className="object-cover"
         />
