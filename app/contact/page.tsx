@@ -1,4 +1,19 @@
+import type { Metadata } from "next";
 import Contact from "../components/contactForm";
+
+export const metadata: Metadata = {
+  title: "Contact Us | Get a Free Project Quote",
+  description:
+    "Ready to start your next project? Contact Midnight Code in Winston-Salem, NC. Call (336) 692-6157 or send a message — we'd love to hear from you.",
+  alternates: { canonical: "https://midnight-code.tech/contact" },
+  openGraph: {
+    title: "Contact Midnight Code | Get a Free Project Quote",
+    description:
+      "Ready to start your next project? Contact Midnight Code in Winston-Salem, NC. Call (336) 692-6157 or send a message — we'd love to hear from you.",
+    url: "https://midnight-code.tech/contact",
+    type: "website",
+  },
+};
 import { PhoneIcon, EnvelopeIcon, MapPinIcon } from "@heroicons/react/16/solid";
 
 export default function ContactPage() {

@@ -1,4 +1,19 @@
+import type { Metadata } from "next";
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/20/solid";
+
+export const metadata: Metadata = {
+  title: "About Minuit Spence | Fullstack Web Developer",
+  description:
+    "Meet Minuit Spence, a fullstack web developer based in Winston-Salem, NC. Specializing in Next.js, TypeScript, Sanity CMS, and building responsive web applications.",
+  alternates: { canonical: "https://midnight-code.tech/minuit-spence" },
+  openGraph: {
+    title: "About Minuit Spence | Fullstack Web Developer",
+    description:
+      "Meet Minuit Spence, a fullstack web developer based in Winston-Salem, NC. Specializing in Next.js, TypeScript, Sanity CMS, and building responsive web applications.",
+    url: "https://midnight-code.tech/minuit-spence",
+    type: "profile",
+  },
+};
 import Image from "next/image";
 
 const profile = {

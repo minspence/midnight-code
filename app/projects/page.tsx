@@ -1,4 +1,19 @@
+import type { Metadata } from "next";
 import { sanityFetch } from "@/sanity/lib/live";
+
+export const metadata: Metadata = {
+  title: "Web Development Portfolio | Projects",
+  description:
+    "Browse Midnight Code's portfolio of responsive websites and web apps built with Next.js, Sanity, and Tailwind CSS for clients across North Carolina and beyond.",
+  alternates: { canonical: "https://midnight-code.tech/projects" },
+  openGraph: {
+    title: "Web Development Portfolio | Midnight Code Projects",
+    description:
+      "Browse Midnight Code's portfolio of responsive websites and web apps built with Next.js, Sanity, and Tailwind CSS for clients across North Carolina and beyond.",
+    url: "https://midnight-code.tech/projects",
+    type: "website",
+  },
+};
 import { ALL_PROJECTS_QUERY } from "@/sanity/queries/projects";
 import ProjectCard, { type ProjectCardData } from "../components/ProjectCard";
 import Link from "next/link";

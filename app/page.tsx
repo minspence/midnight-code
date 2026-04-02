@@ -1,4 +1,19 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Midnight Code | Web Development in Winston-Salem, NC",
+  description:
+    "Midnight Code builds responsive websites and web apps using Next.js, Sanity, and Supabase. Based in Winston-Salem, NC — let's build your next project.",
+  alternates: { canonical: "https://midnight-code.tech" },
+  openGraph: {
+    title: "Midnight Code | Web Development in Winston-Salem, NC",
+    description:
+      "Midnight Code builds responsive websites and web apps using Next.js, Sanity, and Supabase. Based in Winston-Salem, NC — let's build your next project.",
+    url: "https://midnight-code.tech",
+    type: "website",
+  },
+};
 import ContactForm from "./components/contactForm";
 import Link from "next/link";
 import { sanityFetch } from "@/sanity/lib/live";
