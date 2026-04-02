@@ -16,7 +16,7 @@ const navLinks = {
 
 export default function Footer() {
   return (
-    <div>
+    <footer>
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
         <div>
           <nav
@@ -47,9 +47,9 @@ export default function Footer() {
           ))}
         </div>
         <p className="mt-10 text-center text-sm/6 text-gray-600 dark:text-gray-400">
-          &copy; 2025 Midnight Code LLC. All rights reserved.
+          &copy; 2026 Midnight Code LLC. All rights reserved.
         </p>
       </div>
-    </div>
+    </footer>
   );
 }

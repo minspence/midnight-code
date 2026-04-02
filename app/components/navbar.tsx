@@ -33,6 +33,7 @@ export default function Navbar() {
             alt="Midnight Code logo"
             height={128}
             width={128}
+            sizes="128px"
           />
         </Link>
 

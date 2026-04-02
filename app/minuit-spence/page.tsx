@@ -32,10 +32,11 @@ export default function MinuitSpencePortfolio() {
         <div className="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
           <div className="flex">
             <Image
-              alt=""
+              alt={profile.name}
               src={profile.avatar}
               height={100}
               width={100}
+              sizes="128px"
               className="size-24 rounded-full ring-4 ring-white sm:size-32 dark:ring-gray-900 dark:outline dark:-outline-offset-1 dark:outline-white/10"
             />
           </div>

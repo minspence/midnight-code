@@ -133,7 +133,7 @@ export default async function Home() {
           </div>
           <div className="order-1 md:order-2 text-center md:text-left">
             <h2 className="font-bold text-4xl mb-2.5">Let build something!</h2>
-            <p className="font-mono font-sm max-w-100 mx-auto md:mx-0">
+            <p className="font-mono text-sm max-w-100 mx-auto md:mx-0">
               &#34;Whatever you want to build, website, web application, or have
               an App. idea Im here to help drop me a line and lets talk.&#34;
             </p>
